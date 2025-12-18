@@ -1,17 +1,24 @@
 </html>
-<button id="playButton" style="font-size: 24px; padding: 20px 40px; transition: transform 0.3s ease;">
+<button id="playButton" style="font-size: 24px; padding: 20px 40px; transition: transform 0.2s ease;">
   Привет, Егор
 </button>
 
-<style>
-  #playButton:hover {
-    transform: scale(1.1);
-  }
+<script>
+  const button = document.getElementById('playButton');
+  
+  button.addEventListener('mousedown', () => {
+    button.style.transform = 'scale(0.95)';
+  });
 
-  #playButton:active {
-    transform: scale(0.9);
-  }
-</style>
+  button.addEventListener('mouseup', () => {
+    button.style.transform = 'scale(1)';
+  });
+
+  button.addEventListener('mouseleave', () => {
+    button.style.transform = 'scale(1)';
+  });
+</script>
+
 
 
 
