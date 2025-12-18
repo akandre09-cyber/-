@@ -1,28 +1,47 @@
 </html>
-<button id="playButton" style="font-size: 24px; padding: 20px 40px; transition: transform 0.2s ease;">
-  Привет, Егор
-</button>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-<script>
-  const button = document.getElementById('playButton');
-  
-  button.addEventListener('mousedown', () => {
-    button.style.transform = 'scale(0.95)';
-  });
+    #playButton {
+      font-size: 24px;
+      padding: 20px 40px;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      cursor: pointer;
+    }
 
-  button.addEventListener('mouseup', () => {
-    button.style.transform = 'scale(1)';
-  });
+    #playButton:hover {
+      transform: scale(1.1);
+      background-color: #f0f0f0;
+    }
 
-  button.addEventListener('mouseleave', () => {
-    button.style.transform = 'scale(1)';
-  });
-</script>
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <button id="playButton" style="font-size: 24px; padding: 20px 40px; transition: transform 0.2s ease;">
-    Привет, Егор
-  </button>
-</div>
+    #playButton:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button id="playButton">Привет, Егор</button>
+  </div>
+
+  <script>
+    const button = document.getElementById('playButton');
+
+    button.addEventListener('click', () => {
+      // Можно добавить любой код при клике
+      alert('Кнопка нажата!');
+    });
+  </script>
+</body>
+</html>
 
 
 
