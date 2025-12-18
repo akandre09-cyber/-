@@ -40,3 +40,12 @@
   </script>
 </body>
 </html>
+<audio id="buttonSound" src="sound.mp3"></audio>
+const button = document.getElementById('playButton');
+const sound = document.getElementById('buttonSound');
+
+button.addEventListener('click', () => {
+  sound.currentTime = 0; // Сбросить воспроизведение к началу
+  sound.play(); // Воспроизвести звук
+});
+
