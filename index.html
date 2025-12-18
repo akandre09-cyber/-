@@ -1,10 +1,18 @@
 </html>
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <button id="playButton" style="font-size: 24px; padding: 20px 40px;">
-    Привет, Егор
-  </button>
-</div>
+<button id="playButton" style="font-size: 24px; padding: 20px 40px; transition: transform 0.3s ease;">
+  Привет, Егор
+</button>
+
+<style>
+  #playButton:hover {
+    transform: scale(1.1);
+  }
+
+  #playButton:active {
+    transform: scale(0.9);
+  }
+</style>
 
 
 
