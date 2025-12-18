@@ -28,129 +28,29 @@
 </head>
 <body>
   <div class="container">
-    <button id="playButton">Привет, Егор</button>
+    <button id="playButton">Нажми меня!</button>
   </div>
 
-  <script>
-    const button = document.getElementById('playButton');
-
-    button.addEventListener('click', () => {
-      alert('соси еблан!');
-    });
-  </script>
-</body>
-</html>
-Этот код создаёт одну кнопку, которая будет по центру, увеличиваться при наведении, уменьшаться при нажатии и будет интерактивной. Если что-то ещё нужно подправить или добавить, просто дай знать!
-
-
-
-
-
-Вы сказали:
-“Теперь можно как-то...”
-
-ChatGPT сказал:
-Конечно, если у
-
-
-
-
-
-Вы сказали:
-“Маленькая, как-то добавить звук.”
-
-ChatGPT сказал:
-Да, конечно! Чтобы добавить звук, достаточно подключить аудиофайл и воспроизвести его при нажатии на кнопку. Например, можно сделать так:
-
-Сначала добавь аудиофайл в свой репозиторий.
-
-Затем подключи его в коде с помощью тега <audio>.
-
-И добавь JavaScript, чтобы воспроизводить звук при нажатии на кнопку.
-
-Вот пример кода:
-
-html
-Копировать код
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    #playButton {
-      font-size: 24px;
-
-
-
-
-Вы сказали:
-“Стой, подожди. Напиши мне код, только чтобы вставить звук при нажатии кнопки.”
-
-ChatGPT сказал:
-Конечно, вот пример кода, который добавит звук при нажатии на кнопку:
-
-Сначала добавь свой аудиофайл в репозиторий, например, sound.mp3.
-
-Затем добавь в код тег <audio> и укажи источник звука.
-
-И добавь JavaScript, чтобы воспроизвести звук при нажатии на кнопку.
-
-Вот пример:
-
-html
-Копировать код
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    #playButton {
-      font-size: 24px;
-      padding: 20px 40px;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-      cursor: pointer;
-    }
-
-    #playButton:hover {
-      transform: scale(1.1);
-      background-color: #f0f0f0;
-    }
-
-    #playButton:active {
-      transform: scale(0.95);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <button id="playButton">Привет, Егор</button>
-  </div>
-
-  <audio id="buttonSound" src="sound.mp3"></audio>
+  <audio id="buttonSound" src="sound.mp3" preload="auto"></audio>
 
   <script>
     const button = document.getElementById('playButton');
     const sound = document.getElementById('buttonSound');
+    let clickCount = 0;
 
     button.addEventListener('click', () => {
-      sound.currentTime = 0; // Сбросить воспроизведение к началу
-      sound.play(); // Воспроизвести звук
+      clickCount++;
+      sound.currentTime = 0;
+      sound.play();
+
+      if (clickCount === 5) {
+        alert('Вы сломали кнопку!');
+      } else if (clickCount > 5) {
+        alert('Не нажимайте больше! Всё хватит!');
+      } else {
+        alert('Не нажимай больше, хватит!');
+      }
     });
   </script>
 </body>
 </html>
-<audio id="buttonSound" src="sound.mp3" preload="auto"></audio>
-
-
